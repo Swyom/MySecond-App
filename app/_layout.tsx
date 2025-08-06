@@ -4,6 +4,9 @@ import { useFonts } from "expo-font";
 import { useEffect } from "react";
 
 export default function RootLayout() {
+  return(
+     <Stack screenOptions={{ headerShown: false }} />
+  )
   const [fontsLoaded] = useFonts({
     "QuickSand-Bold": require("../assets/fonts/Quicksand-Bold.ttf"),
     "QuickSand-Light": require("../assets/fonts/Quicksand-Light.ttf"),

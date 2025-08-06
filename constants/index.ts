@@ -40,6 +40,8 @@ import pizzaOne from "@/assets/images/pizza-one.png";
 import salad from "@/assets/images/salad.png";
 import success from "@/assets/images/success.png";
 import tomatoes from "@/assets/images/tomatoes.png";
+import chickenroll from "@/assets/images/chickenroll.png";
+import frienchfries from "@/assets/images/frienchfries.png";
 
 export const CATEGORIES = [
     {
@@ -61,6 +63,13 @@ export const CATEGORIES = [
     {
         id: "5",
         name: "Burrito",
+    },
+     {
+        id: "6",
+        name: "French Fries",
+    }, {
+        id: "7",
+        name: "Chicken Roll",
     },
 ];
 
@@ -87,6 +96,27 @@ export const offers = [
         id: 4,
         title: "BURRITO DELIGHT",
         image: buritto,
+        color: "#EB920C",
+    },
+
+     {
+        id: 5,
+        title: "CHICKEN ROLL",
+        image: chickenroll,
+        color: "#EB920C",
+    },
+
+     {
+        id: 6,
+        title: "BURRITO DELIGHT",
+        image: buritto,
+        color: "#EB920C",
+    },
+
+    {
+        id: 7,
+        title: "FRENCH FRIES",
+        image: frienchfries,
         color: "#EB920C",
     },
 ];
@@ -199,4 +229,6 @@ export const images = {
     star,
     trash,
     user,
+    frienchfries,
+    chickenroll,
 };
