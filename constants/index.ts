@@ -43,6 +43,7 @@ import tomatoes from "@/assets/images/tomatoes.png";
 import chickenroll from "@/assets/images/chickenroll.png";
 import frienchfries from "@/assets/images/frienchfries.png";
 
+
 export const CATEGORIES = [
     {
         id: "1",
@@ -71,6 +72,7 @@ export const CATEGORIES = [
         id: "7",
         name: "Chicken Roll",
     },
+   
 ];
 
 export const offers = [
@@ -103,21 +105,14 @@ export const offers = [
         id: 5,
         title: "CHICKEN ROLL",
         image: chickenroll,
-        color: "#EB920C",
-    },
-
-     {
-        id: 6,
-        title: "BURRITO DELIGHT",
-        image: buritto,
-        color: "#EB920C",
+        color: "#46b40eff",
     },
 
     {
         id: 7,
         title: "FRENCH FRIES",
         image: frienchfries,
-        color: "#EB920C",
+        color: "#d32626ff",
     },
 ];
 
