@@ -1,30 +1,32 @@
 import { images, offers } from "@/constants";
-import { FlatList, Image, Pressable, Text, View } from "react-native";
+import { FlatList, Image, Pressable, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { useFonts } from "expo-font";
+import CartButton from "../../components/CartButton";
+
+// import {Fragement} from "react"
+import cn from 'clsx';
+// import { Quicksand-Bold } from "@/assets/fonts/Quicksand-Bold.ttf";
 
 export default function Index() {
-
-const [loadesFonts] = useFonts({
-    "Quicksand-Bold": require("@/assets/fonts/Quicksand-Bold.ttf"),
-    "Quicksand-Medium": require("@/assets/fonts/Quicksand-Medium.ttf"),
-    "Quicksand-Regular": require("@/assets/fonts/Quicksand-Regular.ttf"),
-    "Quicksand-SemiBold": require("@/assets/fonts/Quicksand-SemiBold.ttf"),
-    "Quicksand-Light": require("@/assets/fonts/Quicksand-Light.ttf"),
-    "Rubik-Medium": require("@/assets/fonts/Rubik-Medium.ttf"),
-    "Rubik-Regular": require("@/assets/fonts/Rubik-Regular.ttf"),
-    "Rubik-Bold": require("@/assets/fonts/Rubik-Bold.ttf"),
-    "Rubik-Light": require("@/assets/fonts/Rubik-Light.ttf"),
-    "Rubik-SemiBold": require("@/assets/fonts/Rubik-SemiBold.ttf"), 
-
-})
-
-if (!loadesFonts) {
-    return null; 
-}
-
   return (
     <SafeAreaView className="flex-1 bg-white">
+
+      <View className="flex-between flex-row w-full my-5 px-5">
+        <View className="flex-start">
+          <Text className="small-bold text-primary">DELIVER TO</Text>
+         
+         <TouchableOpacity className="flex-row flex-center gap-x-1 mt-0.5">
+          <Text className="paragraph-bold">Odisha</Text>
+          <Image source={images.arrowDown} className="size-3" resizeMode="contain"></Image>
+         </TouchableOpacity>
+          
+        </View>
+
+       <CartButton/>
+
+      </View>
+
+
       <FlatList
         data={offers}
         keyExtractor={(item, index) => index.toString()}
@@ -49,7 +51,7 @@ if (!loadesFonts) {
 
                   {/* Text Section */}
                   <View className="offer-card_info w-2/5 ">
-                    <Text className="h1-bold text-white "style={{ fontFamily:"Rubik-Bold", fontSize: 32,fontWeight: "bold" }}>
+                    <Text className="h1-bold text-white "style={{ fontFamily:"QuickSand-Bold", fontSize: 32,fontWeight: "bold" }}>
                       {item.title}
                     </Text>
                     <Image
