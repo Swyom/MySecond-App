@@ -1,23 +1,23 @@
-import { Stack } from "expo-router";
-import './global.css'; 
-import { useFonts } from "expo-font";
-import { useEffect } from "react";
+import { useEffect } from 'react';
+import { View, ActivityIndicator } from 'react-native';
+import { useAuthStore } from '../store/auth.store';
+import AuthLayout from './auth/_layout';
+import TabsLayout from './tabs/_layout';
 
 export default function RootLayout() {
-  return(
-     <Stack screenOptions={{ headerShown: false }} />
-  )
-  const [fontsLoaded] = useFonts({
-    "QuickSand-Bold": require("../assets/fonts/Quicksand-Bold.ttf"),
-    "QuickSand-Light": require("../assets/fonts/Quicksand-Light.ttf"),
-    "QuickSand-Medium": require("../assets/fonts/Quicksand-Medium.ttf"),
-    "QuickSand-Regular": require("../assets/fonts/Quicksand-Regular.ttf"),
-    "QuickSand-SemiBold": require("../assets/fonts/Quicksand-SemiBold.ttf"),
-  });
+  const { isAuthenticated, isLoading, fetchAuthenticatedUser } = useAuthStore();
 
-  if (!fontsLoaded) {
-    return null;
+  useEffect(() => {
+    fetchAuthenticatedUser();
+  }, []);
+
+  if (isLoading) {
+    return (
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <ActivityIndicator size="large" />
+      </View>
+    );
   }
 
-  return <Stack />;
+  return isAuthenticated ? <TabsLayout /> : <AuthLayout />;
 }

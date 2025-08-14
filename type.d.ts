@@ -1,4 +1,5 @@
 import { Models } from "react-native-appwrite";
+import { User } from '../type';
 
 export interface MenuItem extends Models.Document {
     name: string;
@@ -16,7 +17,7 @@ export interface Category extends Models.Document {
     description: string;
 }
 
-export interface User extends Models.Document {
+export interface user extends Models.Document {
     name: string;
     email: string;
     avatar: string;
@@ -39,8 +40,8 @@ export interface CartItemType {
 }
 
 export interface CartStore {
-    items: CartItem[];
-    addItem: (item: Omit<CartItem, "quantity">) => void;
+    items: CartItemType[];
+    addItem: (item: Omit<CartItemType, "quantity">) => void;
     removeItem: (id: string, customizations: CartCustomization[]) => void;
     increaseQty: (id: string, customizations: CartCustomization[]) => void;
     decreaseQty: (id: string, customizations: CartCustomization[]) => void;
@@ -90,7 +91,7 @@ interface ProfileFieldProps {
     icon: ImageSourcePropType;
 }
 
-interface CreateUserParams {
+interface CreateUserPrams {
     email: string;
     password: string;
     name: string;
